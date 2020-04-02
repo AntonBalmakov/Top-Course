@@ -1,0 +1,59 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="ru"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="ru"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="ru"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="ru"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+  {% bootstrap_javascript jquery='slim' %}
+  <title>{% block title %}Имя сайта{% endblock %}</title>
+
+
+
+
+  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav" style="position: relative; z-index: 10000; " >
+        <li><a href="{% url 'sales_site:index' %}" class="icon home"><span>Главная</span></a></li>
+        <li class="dropdown">
+          <a href="#">Курсы</a>
+          <ul>
+            <li><a href="#">С++</a></li>
+            <li><a href="#">Python</a></li>
+            <li><a href="#">Js</a></li>
+            <li><a href="#">Css</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Акции</a>
+          <ul class="large">
+            <li><a href="#">-10% Python</a></li>
+            <li><a href="#">-7% C++</a></li>
+            <li><a href="#">-15% Js</a></li>
+            <li><a href="#">-25% Css</a></li>
+          </ul>
+        </li>
+        <li class="active"><a href="{% url 'sales_site:other' page='about' %}">О сайте</a></li>
+        <li><a href="{% url 'sales_site:shareholders' page='shareholders' %}">Акционерам</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="col border ру-2">
+  {% block content %}
+  {% endblock %}
+  </section>
+
+</body>
+</html>
