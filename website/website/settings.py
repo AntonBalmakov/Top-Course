@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'top_course_db',
-        'USER' : 'root',
-        'PASSWORD' : 'password',
-        'HOST' : '35.184.197.218',
-        'PORT' : '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'website.data'),
     }
 }
 
